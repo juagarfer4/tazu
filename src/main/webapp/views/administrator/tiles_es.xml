@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles_es.xml
+ *
+ * Copyright (C) 2013 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="administrator/dashboard" extends="master.page">	
+		<put-attribute name="title" value="Panel de control" />
+		<put-attribute name="body" value="/views/administrator/dashboard.jsp" />
+	</definition>
+	
+	<definition name="administrator/artists" extends="master.page">	
+		<put-attribute name="title" value="Artistas" />
+		<put-attribute name="body" value="/views/administrator/artists.jsp" />
+	</definition>
+	
+	<definition name="administrator/purchasers" extends="master.page">	
+		<put-attribute name="title" value="Compradores" />
+		<put-attribute name="body" value="/views/administrator/purchasers.jsp" />
+	</definition>
+	
+	<definition name="administrator/onSaleArtworks" extends="master.page">	
+		<put-attribute name="title" value="Obras en venta" />
+		<put-attribute name="body" value="/views/administrator/onSaleArtworks.jsp" />
+	</definition>
+	
+	<definition name="administrator/soldArtworks" extends="master.page">	
+		<put-attribute name="title" value="Obras vendidas" />
+		<put-attribute name="body" value="/views/administrator/soldArtworks.jsp" />
+	</definition>
+	
+	<definition name="administrator/orders" extends="master.page">	
+		<put-attribute name="title" value="Pedidos" />
+		<put-attribute name="body" value="/views/administrator/orders.jsp" />
+	</definition>
+	
+	<definition name="administrator/listprofit" extends="master.page">	
+		<put-attribute name="title" value="Beneficios" />
+		<put-attribute name="body" value="/views/administrator/listprofit.jsp" />
+	</definition>
+	
+	<definition name="administrator/editprofit" extends="master.page">	
+		<put-attribute name="title" value="Editar beneficio" />
+		<put-attribute name="body" value="/views/administrator/editprofit.jsp" />
+	</definition>
+	
+	<definition name="administrator/listtax" extends="master.page">	
+		<put-attribute name="title" value="Lista de impuestos" />
+		<put-attribute name="body" value="/views/administrator/listtax.jsp" />
+	</definition>
+	
+	<definition name="administrator/edittax" extends="master.page">	
+		<put-attribute name="title" value="Editar un impuesto" />
+		<put-attribute name="body" value="/views/administrator/edittax.jsp" />
+	</definition>
+	
+	<definition name="administrator/createtax" extends="master.page">	
+		<put-attribute name="title" value="Crear un impuesto" />
+		<put-attribute name="body" value="/views/administrator/edittax.jsp" />
+	</definition>
+	
+</tiles-definitions>

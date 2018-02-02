@@ -1,0 +1,187 @@
+.uppercase {
+text-transform:uppercase;
+}
+
+body {
+font-family:Sanchez;
+font-weight:400;
+}
+
+p {
+font-family:Open sans;
+font-size:13px;
+line-height:20px;
+margin-bottom:20px
+}
+
+#elements .btn {
+display:block;
+margin-bottom:15px;
+}
+
+.no-padding {
+padding:0px !important;
+}
+.space10 { margin-bottom:10px;}
+.space20 { margin-bottom:20px;}
+.space30 { margin-bottom:30px;}
+.space40 { margin-bottom:40px;}
+.space50 { margin-bottom:50px;}
+.space60 { margin-bottom:60px;}
+.space70 { margin-bottom:70px;}
+.space80 { margin-bottom:80px;}
+.space90 { margin-bottom:90px;}
+.space100 { margin-bottom:100px;}
+
+.btn-orange {
+background:#65BC54;
+}
+
+.btn-orange-lite {
+background:#f08c2b;
+}
+
+.btn-blue {
+background:#46b9e9;
+}
+
+.btn-green {
+background:#8fc26e;
+}
+
+.btn-violet {
+background:#896ec2;
+}
+
+.btn-gray {
+background:#444444;
+}
+
+.btn-brown {
+background:#75454f;
+}
+
+.btn-yellow {
+background:#ffcf24;
+}
+
+.btn-dark-blue {
+background:#454f7b;
+}
+
+.btn-brown-lite {
+background:#877361;
+}
+
+.btn-pink {
+background:#f47f9d;
+}
+
+.btn-white {
+background:#ffffff;
+color:#444444;
+}
+
+/*- - - - - - - - - - - - - - - - - - - - 
+		   ACCORDION
+- - - - - - - - - - - - - - - - - - - - */
+
+#accordion {
+}
+
+.panel {
+    border-radius: 0px;
+}
+
+.panel-default > .panel-heading {
+	border-radius:0px;
+	border:none;
+}
+
+.panel-title {
+    font-size: 14px;
+}
+
+.panel-heading {
+    padding: 0px 0px;
+position:relative;
+}
+
+.panel-body {
+background:#65BC54;
+color:#fff;
+padding:0px 20px 15px;
+border:none !important;
+}
+
+
+.panel-heading .accordion-toggle {
+    background: #65BC54;
+    padding: 12px 20px;
+display: table;
+width: 100%;
+border:1px solid #65BC54;
+color:#fff;
+}
+
+.panel-heading .accordion-toggle.collapsed {
+    background: #fff;
+    padding: 12px 15px;
+	display: table;
+	width: 100%;
+	border:0;
+	color:#444;
+}
+
+.panel-group .panel + .panel {
+    margin-top: 2px;
+}
+
+
+.panel-heading .accordion-toggle:after {
+	content: "";
+	background:url(../images/minus.png) no-repeat left center; 
+	float: right;  
+	width:15px;
+	height:15px;
+	position:relative;
+	top:-0px;
+	right:-2px;
+
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+	content: "";
+	background:url(../images/plus.png) no-repeat left center;
+	float: right;  
+	width:15px;
+	height:15px;
+	position:relative;
+	top:-0px;
+	right:-2px;
+}
+
+.panel-heading .accordion-toggle:after {
+	content: "";
+	background:url(../images/minus.png) no-repeat left center; 
+	float: right;  
+	width:15px;
+	height:15px;
+	position:relative;
+	top:-0px;
+	right:-2px;
+
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+	content: "";
+	background:url(../images/plus.png) no-repeat left center;
+	float: right;  
+	width:15px;
+	height:15px;
+	position:relative;
+	top:-0px;
+	right:-2px;
+
+}
+

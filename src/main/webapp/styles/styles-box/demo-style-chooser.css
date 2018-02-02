@@ -1,0 +1,213 @@
+/* #Demo Stylechooser Styles
+================================================== */
+#stylesBox {
+	width: 100px;
+	position: fixed;
+	left: -100px;
+	top: 80px;
+	z-index: 999 !important;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	color: #fff
+}
+
+#stylesBox:hover {
+	left: 0px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+a.contact {
+	width: 30px;
+	height: 88px;
+	display: block;
+	text-indent: -9999px;
+	background: url(styles.png) 0 0 no-repeat;
+	text-indent: -9999px;
+	float: right;
+	margin-right: -30px
+}
+
+.stylesBack {
+	background: #202020;
+	height: 88px;
+}
+
+#stylesBox p {
+	color: #fff;
+	text-shadow: 0 0px 0 #FFFFFF !important;
+	padding-left: 10px;
+	margin: 0 0 2px 0;
+	text-transform: uppercase;
+	font-size: 11px;
+	padding-top: 10px
+}
+
+a.style1 {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	background: #ea4128;
+	margin: 0 5px 0 10px
+}
+
+a.style2 {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	background: #3078A8;
+	margin: 0 5px
+}
+
+a.style3 {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	background: #90A830;
+	margin: 0 5px
+}
+
+a.boxed1, a.boxed1:visited, a.boxed2, a.boxed2:visited {
+	margin-left: 10px;
+	color: #fff
+}
+
+a.boxed1:hover, a.boxed1:active, a.boxed1:focus, a.boxed2:hover, a.boxed2:active,
+	a.boxed2:focus {
+	color: #E96546 !important
+}
+
+.pattern-links, .resetButton {
+	margin-left: 10px
+}
+
+.pattern-links a {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	margin: 0 5px 5px 0
+}
+
+a.back1 {
+	background: url(../images/background/arches.png);
+}
+
+a.back2 {
+	background: url(../images/background/checkered-pattern.png) #fff
+}
+
+a.back3 {
+	background: url(../images/background/circles.png);
+}
+
+a.back4 {
+	background: url(../images/background/cubes.png);
+}
+
+a.back5 {
+	background: url(../images/background/diamonds.png);
+}
+
+a.back6 {
+	background: url(../images/background/double-lined.png);
+}
+
+a.back7 {
+	background: url(../images/background/grilled.png);
+}
+
+a.back8 {
+	background: url(../images/background/groovepaper.png);
+}
+
+a.back9 {
+	background: url(../images/background/old-wall.png);
+}
+
+a.back10 {
+	background: url(../images/background/pinstripe.png);
+}
+
+a.back11 {
+	background: url(../images/background/skin.png);
+}
+
+a.back12 {
+	background: url(../images/background/small-dots.png);
+}
+
+a.back13 {
+	background: url(../images/background/stucco.png);
+}
+
+a.back14 {
+	background: url(../images/background/subtle-crosslines.png);
+}
+
+a.back15 {
+	background: url(../images/background/wall.png);
+}
+
+a.back16 {
+	background: url(../images/background/white-brick-wall.png);
+}
+
+a.back17 {
+	background: url(../images/background/white-diamond.png);
+}
+
+a.back18 {
+	background: url(../images/background/white-paperboard.png);
+}
+
+a.back19 {
+	background: url(../images/background/wood.png);
+}
+
+a.back20 {
+	background: url(../images/background/worn-dots.png);
+}
+
+a.back21 {
+	background: url(../images/background/photography.png)
+}
+
+a.back22 {
+	background: url(../images/background/geometry.png)
+}
+
+a.back23 {
+	background: url(../images/background/skulls.png)
+}
+
+a.back24 {
+	background: url(../images/background/tree_bark.png)
+}
+
+a.back25 {
+	background: url(../images/background/brickwall.png)
+}
+
+.full1, .full2, #resetButton {
+	margin-left: 10px
+}
+
+#resetButton {
+	font-size: 11px;
+	color: #CCC !important
+}
+
+a.full1:focus, a.full1:hover, a.full2:focus, a.full2:hover, a#resetButton:hover
+	{
+	color: #fff
+}

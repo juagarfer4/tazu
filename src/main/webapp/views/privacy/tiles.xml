@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="privacy/lopd-lssi" extends="master.page">
+		<put-attribute name="title" value="Terms and conditions" />
+		<put-attribute name="body" value="/views/privacy/lopd-lssi.jsp" />
+	</definition>
+	
+	<definition name="privacy/cookies" extends="master.page">
+		<put-attribute name="title" value="Cookies" />
+		<put-attribute name="body" value="/views/privacy/cookies.jsp" />
+	</definition>
+	
+	<definition name="privacy/unsubscribe" extends="master.page">
+		<put-attribute name="title" value="Unsubscribe" />
+		<put-attribute name="body" value="/views/privacy/unsubscribe.jsp" />
+	</definition>
+	
+	<definition name="privacy/policy" extends="master.page">
+		<put-attribute name="title" value="Policy" />
+		<put-attribute name="body" value="/views/privacy/policy.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- * PopulateDatabase.xml * * Copyright (C) 2014 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- User accounts -->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="administrator1" />
+		<property name="password" value="d5cee333abe432891a0de57d0ee38713" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRATOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="administrator2" />
+		<property name="password" value="82954495ff7e2a735ed2192c35b2cd00" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRATOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="artist1" />
+		<property name="password" value="8507c08cd2743274878fb97302e42cf8" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ARTIST" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="artist2" />
+		<property name="password" value="a330293fcc542e3b891a6c102e59f217" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ARTIST" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="purchaser1" />
+		<property name="password" value="999c64609725b99dab3a7695b0174db4" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PURCHASER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="purchaser2" />
+		<property name="password" value="73e7dc61d10b2c8afb3ee90a8f19f8db" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PURCHASER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="artist3" />
+		<property name="password" value="0f1da3aa51be4b7ff3e1e045feedfb7c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ARTIST" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Other domain beans come here -->
+
+	<!-- Administrator -->
+
+	<bean id="administrator1" class="domain.Administrator">
+		<property name="name" value="Antonio" />
+		<property name="surname" value="López" />
+		<property name="phone" value="612345678" />
+		<property name="email" value="antoniolopez@us.es" />
+		<property name="userAccount" ref="userAccount1" />
+	</bean>
+
+	<bean id="administrator2" class="domain.Administrator">
+		<property name="name" value="María" />
+		<property name="surname" value="López" />
+		<property name="phone" value="667892345" />
+		<property name="email" value="marialopez@us.es" />
+		<property name="userAccount" ref="userAccount2" />
+	</bean>
+
+	<!-- Artist -->
+
+	<bean id="artist1" class="domain.Artist">
+		<property name="name" value="Francisco" />
+		<property name="surname" value="Molina" />
+		<property name="phone" value="643212456" />
+		<property name="email" value="franciscomolina@us.es" />
+		<property name="birthDate" value="02/01/1990" />
+		<property name="nationality" value="Spanish" />
+		<property name="address" value="Calle El Mirador" />
+		<property name="rating" value="8" />
+		<property name="artworks">
+			<list>
+				<ref bean="artwork2" />
+				<ref bean="artwork3" />
+			</list>
+		</property>
+		<property name="reviews">
+			<list>
+				<ref bean="review2" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount3" />
+	</bean>
+
+	<bean id="artist2" class="domain.Artist">
+		<property name="name" value="Tim" />
+		<property name="surname" value="Patch" />
+		<property name="phone" value="654321234" />
+		<property name="email" value="timpatch@us.es" />
+		<property name="birthDate" value="10/11/1949" />
+		<property name="nationality" value="Australian" />
+		<property name="address"
+			value="165 Freemans Road, 4211 Hellfire Pass Farm , Australia" />
+		<property name="URL" value="https://twitter.com/pricasso" />
+		<property name="rating" value="10" />
+		<property name="artworks">
+			<list>
+				<ref bean="artwork1" />
+			</list>
+		</property>
+		<property name="reviews">
+			<list>
+				<ref bean="review1" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount4" />
+	</bean>
+
+	<bean id="artist3" class="domain.Artist">
+		<property name="name" value="José Antonio" />
+		<property name="surname" value="Villadiego" />
+		<property name="phone" value="666666666" />
+		<property name="email" value="villa@us.es" />
+		<property name="birthDate" value="04/23/1992" />
+		<property name="nationality" value="Spanish" />
+		<property name="address" value="Calle Real, El Viso del Alcor, Sevilla" />
+		<property name="URL" value="https://twitter.com/villadiego08" />
+		<property name="artworks">
+			<list>
+				<ref bean="artwork4" />
+				<ref bean="artwork5" />
+				<ref bean="artwork6" />
+				<ref bean="artwork7" />
+			</list>
+		</property>
+		<property name="reviews">
+			<list>
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount7" />
+	</bean>
+
+	<!-- Profit -->
+
+	<bean id="profit1" class="domain.Profit">
+		<property name="value" value="25" />
+		<property name="lowerLimit" value="0" />
+		<property name="upperLimit" value="3" />
+	</bean>
+
+	<bean id="profit2" class="domain.Profit">
+		<property name="value" value="20" />
+		<property name="lowerLimit" value="4" />
+		<property name="upperLimit" value="10" />
+	</bean>
+
+	<bean id="profit3" class="domain.Profit">
+		<property name="value" value="10" />
+		<property name="lowerLimit" value="11" />
+		<property name="upperLimit" value="49" />
+	</bean>
+
+	<bean id="profit4" class="domain.Profit">
+		<property name="value" value="5" />
+		<property name="lowerLimit" value="50" />
+		<property name="upperLimit" value="9999" />
+	</bean>
+
+	<!-- Tax -->
+
+	<bean id="tax1" class="domain.Tax">
+		<property name="name" value="IVA" />
+		<property name="value" value="21" />
+		<property name="artworks">
+			<list>
+				<ref bean="artwork1" />
+				<ref bean="artwork2" />
+				<ref bean="artwork3" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Purchaser -->
+
+	<bean id="purchaser1" class="domain.Purchaser">
+		<property name="name" value="Rafa" />
+		<property name="surname" value="Mora" />
+		<property name="phone" value="600222111" />
+		<property name="email" value="miramir8nano@gmail.com" />
+		<property name="birthDate" value="05/02/1986" />
+		<property name="nationality" value="Spanish" />
+		<property name="cart" ref="cart1" />
+		<property name="address" value="Puerto de Sagunto, Valencia (España)" />
+		<property name="orders">
+			<list>
+				<ref bean="order1" />
+			</list>
+		</property>
+		<property name="reviews">
+			<list>
+				<ref bean="review1" />
+				<ref bean="review2" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount5" />
+	</bean>
+
+	<bean id="purchaser2" class="domain.Purchaser">
+		<property name="name" value="Juan Carlos" />
+		<property name="surname"
+			value="Alfonso Víctor María de Borbón y Borbón-Dos Sicilias" />
+		<property name="phone" value="678934213" />
+		<property name="email" value="theking@gmail.com" />
+		<property name="birthDate" value="05/01/1938" />
+		<property name="nationality" value="Spanish" />
+		<property name="cart" ref="cart2" />
+		<property name="address" value="Palacio Real de Madrid" />
+		<property name="orders">
+			<list>
+			</list>
+		</property>
+		<property name="reviews">
+			<list>
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount6" />
+	</bean>
+
+	<!-- Review -->
+
+	<bean id="review1" class="domain.Review">
+		<property name="rating" value="10" />
+		<property name="description" value="Gran artista, muy bueno su trabajo" />
+		<property name="artist" ref="artist2" />
+		<property name="purchaser" ref="purchaser1" />
+	</bean>
+
+	<bean id="review2" class="domain.Review">
+		<property name="rating" value="8" />
+		<property name="description" value="Tiene futuro este chaval" />
+		<property name="artist" ref="artist1" />
+		<property name="purchaser" ref="purchaser1" />
+	</bean>
+
+	<!-- Cart -->
+
+	<bean id="cart1" class="domain.Cart">
+		<property name="totalCost" value="0" />
+		<property name="purchaser" ref="purchaser1" />
+		<property name="artworks">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="cart2" class="domain.Cart">
+		<property name="totalCost" value="0" />
+		<property name="purchaser" ref="purchaser2" />
+		<property name="artworks">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Artwork -->
+
+	<bean id="artwork1" class="domain.Artwork">
+		<property name="moment" value="05/11/2015" />
+		<property name="ticker" value="21-El lado oscuro del boli" />
+		<property name="title" value="El lado oscuro del boli" />
+		<property name="discipline" value="Pintura" />
+		<property name="height" value="92" />
+		<property name="width" value="73" />
+		<property name="status" value="SOLD" />
+		<property name="price" value="177.50" />
+		<property name="totalCost" value="231.96" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist2" />
+		<property name="tax" ref="tax1" />
+	</bean>
+
+	<bean id="artwork2" class="domain.Artwork">
+		<property name="moment" value="11/17/2015" />
+		<property name="ticker" value="22-La luna desde la luna" />
+		<property name="title" value="La luna desde la luna" />
+		<property name="discipline" value="Fotografía" />
+		<property name="height" value="10" />
+		<property name="width" value="10" />
+		<property name="status" value="SOLD" />
+		<property name="price" value="10.50" />
+		<property name="totalCost" value="14.01" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist1" />
+		<property name="tax" ref="tax1" />
+	</bean>
+
+	<bean id="artwork3" class="domain.Artwork">
+		<property name="moment" value="11/20/2015" />
+		<property name="ticker" value="23-Ya huele a feria" />
+		<property name="title" value="Ya huele a feria" />
+		<property name="discipline" value="Pintura" />
+		<property name="height" value="92" />
+		<property name="width" value="73" />
+		<property name="status" value="SALE" />
+		<property name="price" value="80.20" />
+		<property name="totalCost" value="107.06" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist1" />
+		<property name="tax" ref="tax1" />
+		<!-- <property name="cart" ref="cart1" /> -->
+	</bean>
+
+	<bean id="artwork4" class="domain.Artwork">
+		<property name="moment" value="04/20/2016" />
+		<property name="ticker" value="1254-Elegancia" />
+		<property name="title" value="Elegancia" />
+		<property name="discipline" value="Pintura. Oleo sobre acrílico en bastidor" />
+		<property name="description"
+			value="Se muestra un carruaje con capota, en azul marino, acompañado de una mantilla blanca, sobre un fondo de tonos ocres. Todos los elementos hacen referencia a la exhibición de enganches que se celebra en la Real Maestranza de Sevilla." />
+		<property name="tags" value="carruaje, oleo, pintura, mantilla, cartel" />
+		<property name="height" value="100" />
+		<property name="width" value="73" />
+		<property name="status" value="SALE" />
+		<property name="price" value="500.00" />
+		<property name="totalCost" value="667.50" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist2" />
+		<property name="tax" ref="tax1" />
+		<!-- <property name="cart" ref="cart1" /> -->
+	</bean>
+
+	<bean id="artwork5" class="domain.Artwork">
+		<property name="moment" value="04/20/2016" />
+		<property name="ticker" value="5465456-Open" />
+		<property name="title" value="Open" />
+		<property name="discipline" value="Pintura" />
+		<property name="description"
+			value="Obra creada a partir de un collage de fotos, dichas fotos se descontextualizaron para crear una nueva obra. Open trata de realizar una reflexión sobre las puertas que debemos cruzar en la vida." />
+		<property name="tags" value="puerta, collage, desierto, subrealismo" />
+		<property name="height" value="100" />
+		<property name="width" value="73" />
+		<property name="status" value="SALE" />
+		<property name="price" value="400.00" />
+		<property name="totalCost" value="534.00" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist2" />
+		<property name="tax" ref="tax1" />
+		<!-- <property name="cart" ref="cart1" /> -->
+	</bean>
+
+	<bean id="artwork6" class="domain.Artwork">
+		<property name="moment" value="04/20/2016" />
+		<property name="ticker" value="5465456-Bus, London" />
+		<property name="title" value="Bus, London" />
+		<property name="discipline" value="Pintura. Óleo sobre acrílico en bastidor" />
+		<property name="description"
+			value="Obra que mezcla una parte de la cultura anglosajona como es el característico autobús londinense." />
+		<property name="tags"
+			value="bus, Londres, constructivismo, movimiento, rojo, luces, velocidad" />
+		<property name="height" value="81" />
+		<property name="width" value="100" />
+		<property name="status" value="SALE" />
+		<property name="price" value="300.00" />
+		<property name="totalCost" value="400.50" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist2" />
+		<property name="tax" ref="tax1" />
+		<!-- <property name="cart" ref="cart1" /> -->
+	</bean>
+
+	<bean id="artwork7" class="domain.Artwork">
+		<property name="moment" value="04/20/2016" />
+		<property name="ticker" value="5465456-Florero" />
+		<property name="title" value="Florero" />
+		<property name="discipline" value="Pintura. Oleo sobre bastidor" />
+		<property name="description"
+			value="Se trata de la creación de un bodegón o naturaleza muerta, se representa un florero en un zócalo de ladrillos de arcilla, típicos de las casas del campo." />
+		<property name="tags" value="florero, bodegón, flores" />
+		<property name="height" value="73" />
+		<property name="width" value="60" />
+		<property name="status" value="SALE" />
+		<property name="price" value="200.00" />
+		<property name="totalCost" value="267.00" />
+		<property name="deleted" value="false" />
+		<property name="artist" ref="artist2" />
+		<property name="tax" ref="tax1" />
+		<!-- <property name="cart" ref="cart1" /> -->
+	</bean>
+
+	<!-- Order -->
+
+	<bean id="order1" class="domain.Order">
+		<property name="moment" value="01/02/2016 15:30" />
+		<property name="totalCost" value="245.97" />
+		<property name="taxValue" value="21" />
+		<property name="paid" value="true" />
+		<property name="taxName" value="IVA" />
+		<property name="purchaser" ref="purchaser1" />
+		<property name="orderLines">
+			<list>
+				<ref bean="orderLine1" />
+				<ref bean="orderLine2" />
+			</list>
+		</property>
+
+	</bean>
+
+	<!-- OrderLine -->
+
+	<bean id="orderLine1" class="domain.OrderLine">
+		<property name="ticker" value="21-El lado oscuro del boli" />
+		<property name="title" value="El lado oscuro del boli" />
+		<property name="totalCost" value="231.96" />
+		<property name="profit" value="12.5" />
+		<property name="order" ref="order1" />
+	</bean>
+
+	<bean id="orderLine2" class="domain.OrderLine">
+		<property name="ticker" value="22-La luna desde la luna" />
+		<property name="title" value="La luna desde la luna" />
+		<property name="totalCost" value="14.01" />
+		<property name="profit" value="12.5" />
+		<property name="order" ref="order1" />
+	</bean>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.live.com" />
+		<property name="port" value="587" />
+		<property name="username" value="ispptazu@outlook.com" />
+		<property name="password" value="FranDeveloper1" />
+
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="mailMail" class="domain.MailMail">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+
+</beans>

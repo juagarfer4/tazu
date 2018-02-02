@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * security.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * Author (A) 2012 Rafael Corchuelo (corchu@us.es)
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"	
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd		
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+    ">
+
+	<!-- Security infrastructure -->
+
+	<bean id="loginService" class="security.LoginService" />
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+
+	<!-- Access control -->
+
+	<security:http auto-config="true" use-expressions="true">
+		<security:intercept-url pattern="/" access="permitAll" /> 
+		<security:intercept-url pattern="/favicon.ico" access="permitAll" /> 
+		<security:intercept-url pattern="/images/**" access="permitAll" /> 
+		<security:intercept-url pattern="/scripts/**" access="permitAll" /> 
+		<security:intercept-url pattern="/styles/**" access="permitAll" /> 
+		<security:intercept-url pattern="/views/misc/index.jsp" access="permitAll" /> 
+		<security:intercept-url pattern="/security/login.do" access="permitAll" /> 
+		<security:intercept-url pattern="/security/loginFailure.do" access="permitAll" /> 
+<!-- 		<security:intercept-url pattern="/welcome/index.do" access="permitAll" /> -->
+		<security:intercept-url pattern="/welcome/login.do" access="isAuthenticated()" /> 
+		<security:intercept-url pattern="/about.do" access="permitAll" /> 
+		
+		<security:intercept-url pattern="/artist/register.do" access="permitAll" />
+		<security:intercept-url pattern="/artist/edit.do" access="permitAll" />
+		<security:intercept-url pattern="/artist/listByKeyword.do" access="permitAll" />
+		<security:intercept-url pattern="/purchaser/register.do" access="permitAll" />
+		<security:intercept-url pattern="/purchaser/edit.do" access="permitAll" /> 
+
+		<security:intercept-url pattern="/customer/action-1.do" access="hasRole('CUSTOMER')" /> 
+		<security:intercept-url pattern="/customer/action-2.do" access="hasRole('CUSTOMER')" /> 
+
+		<security:intercept-url pattern="/review/**" access="permitAll" /> 
+
+		<security:intercept-url pattern="/artwork/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/review/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/cart/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/order/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/orderLine/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/artist/purchaser/list.do" access="hasRole('PURCHASER')" /> 
+		
+		
+
+		<security:intercept-url pattern="/profile/action-1.do" access="isAuthenticated()" /> 
+		<security:intercept-url pattern="/profile/action-2.do" access="isAuthenticated()" /> 
+		<security:intercept-url pattern="/profile/action-3.do" access="isAuthenticated()" />
+		
+		<security:intercept-url pattern="/dashboard/admin/**" access="hasRole('ADMINISTRATOR')" />
+	
+		<security:intercept-url pattern="/review/admin/**" access="hasRole('ADMINISTRATOR')" />
+		
+		<security:intercept-url pattern="/purchaser/admin/**" access="hasRole('ADMINISTRATOR')" />
+
+		<security:intercept-url pattern="/artist/list.do" access="permitAll" />
+		
+		<security:intercept-url pattern="/artwork/listByArtist.do" access="permitAll" />
+		<security:intercept-url pattern="/artwork/display.do" access="permitAll" />
+		<security:intercept-url pattern="/artwork/listAll.do" access="permitAll" />
+		<security:intercept-url pattern="/artwork/listByKeyword.do" access="permitAll" />
+		<security:intercept-url pattern="/artwork/show.do" access="permitAll" />
+		<security:intercept-url pattern="/artwork/listOnSale.do" access="permitAll" />
+		
+		<security:intercept-url pattern="/artwork/artist/myList.do" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/artwork/artist/create.do" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/artwork/artist/edit.do" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/artwork/artist/delete.do" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/review/artist/**" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/artwork/artist/listSold.do" access="hasRole('ARTIST')" />
+		<security:intercept-url pattern="/orderLine/artist/list.do" access="hasRole('ARTIST')" />
+		
+
+		<security:intercept-url pattern="/privacy/**" access="permitAll" /> 
+	
+		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
+
+		<security:form-login 
+			login-page="/security/login.do"
+			password-parameter="password" 
+			username-parameter="username"
+			authentication-failure-url="/security/loginFailure.do" />
+
+		<security:logout 
+			logout-success-url="/" 
+			invalidate-session="true" />
+	</security:http>
+
+</beans>

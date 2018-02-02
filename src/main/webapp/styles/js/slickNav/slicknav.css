@@ -1,0 +1,127 @@
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn { position: relative; display: table; vertical-align: middle; float: none;margin:0 auto; padding: 0.438em 0.625em 0.438em 0.625em; line-height: 1.125em; cursor: pointer; }
+.slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
+.slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
+.slicknav_menu .slicknav_no-text { margin: 0 }
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 16px;
+    height: 3px;
+}
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
+.slicknav_nav { clear: both }
+.slicknav_nav ul,
+.slicknav_nav li { display: block }
+.slicknav_nav .slicknav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em; float:right;}
+.slicknav_nav .slicknav_item { display: block; cursor: pointer; }
+.slicknav_nav a { display: block }
+.slicknav_nav .slicknav_item a { display: inline }
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+/* 
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+	font-size:14px;
+}
+/* Button */
+.slicknav_btn {
+	text-decoration:none;	
+
+}
+/* Button Text */
+.slicknav_menu .slicknav_menutxt {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+  background-color: #f5f5f5;
+}
+.slicknav_menu {
+    font-size: 14px;
+    background: none;
+    position: absolute;
+    top: 97px;
+    left: 0px;
+    z-index: 111;
+    right: 0px;
+	font-family:Open sans;
+}
+
+.slicknav_nav {
+	color:#fff;
+	margin:0;	
+	padding:0;
+	font-size:0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+	list-style: none;
+	overflow:hidden;
+}
+.slicknav_nav ul {
+    padding: 0px;
+	margin: 18px 10px 0;
+    background: #65BC54;
+}
+
+.slicknav_nav ul ul {
+    padding: 0px;
+	margin: 0px 0;
+    background: #6fd65b;
+}
+
+.slicknav_nav ul ul li:last-child a {
+    border-bottom: 1px solid #4e983f;
+}
+
+
+.slicknav_nav a, .slicknav_nav .slicknav_item {
+    padding: 13px 10px;
+    margin: 0px;
+    border-bottom: 1px solid #4e983f;
+    font-size: 13px;
+
+}
+
+.slicknav_nav a:hover, .slicknav_nav .slicknav_item:hover {
+    background: #4e983f;
+
+}
+
+.slicknav_nav .slicknav_item a {
+	border:none;
+}
+
+.slicknav_nav a{
+	text-decoration:none;
+	color:#43413B;
+}
+.slicknav_nav .slicknav_item a {
+	padding:0;
+	margin:0;
+}
+.slicknav_nav .slicknav_item:hover {
+
+}
+.slicknav_nav a:hover{
+
+}
+.slicknav_nav .slicknav_txtnode {
+     margin-left:15px;   
+}
+
+.slicknav_nav ul li:last-child a{
+	border-bottom:none;
+}
